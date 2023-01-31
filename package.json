@@ -2,6 +2,20 @@
   "name": "mine-design",
   "version": "0.0.0",
   "private": true,
+  "description": "The project is build with SolidJS and TailwindCSS",
+  "homepage": "",
+  "bugs": {
+    "url": "https://github.com/Hahahahx/mine-design/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Hahahahx/mine-design.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "ux",
+    "email": "1219654535@qq.com"
+  },
   "workspaces": [
     "apps/*",
     "packages/*"
@@ -9,17 +23,38 @@
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev --parallel",
+    "format": "prettier --write \"**/*.{js,ts,jsx,tsx,md,mdx}\"",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,md,mdx}": [
+      "prettier --write",
+      "eslint",
+      "git add"
+    ],
+    "package.json": "npx sort-package-json"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.2",
+    "@commitlint/config-conventional": "^17.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "eslint": "^8.0.1",
     "eslint-config-custom": "workspace:*",
-    "prettier": "latest",
-    "turbo": "latest"
+    "eslint-config-standard-with-typescript": "^33.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.0",
+    "prettier": "^2.8.3",
+    "sort-package-json": "^2.3.0",
+    "tsconfig": "workspace:*",
+    "turbo": "^1.7.0",
+    "typescript": "*"
   },
+  "packageManager": "pnpm@7.25.1",
   "engines": {
     "node": ">=14.0.0"
-  },
-  "dependencies": {},
-  "packageManager": "pnpm@7.12.1"
+  }
 }

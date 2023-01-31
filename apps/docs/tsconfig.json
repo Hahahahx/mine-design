@@ -1,5 +1,13 @@
 {
-  "extends": "tsconfig/nextjs.json",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules"]
+  "extends": "tsconfig/solid.json",
+  "compilerOptions": {
+    "types": ["solid-start/env"],
+    "outDir": "dist",
+    "baseUrl": ".",
+    "rootDir": ".",
+    "paths": {
+      "~/*": ["src/*"]
+    }
+  },
+  "include": ["./src", "vite.config.ts"]
 }
