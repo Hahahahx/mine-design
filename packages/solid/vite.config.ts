@@ -27,7 +27,14 @@ export default defineConfig({
       logDiagnostics: true,
     }),
     UnoCSS({
-      rules: [["btn", {}]],
+      rules: [
+        [
+          "btn",
+          {
+            background: "red",
+          },
+        ],
+      ],
       shortcuts: [
         {
           logo: "i-logos-solidjs-icon w-6em h-6em transform transition-800 hover:rotate-360",
