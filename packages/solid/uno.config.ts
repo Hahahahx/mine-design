@@ -6,19 +6,32 @@ import {
   presetIcons,
   transformerDirectives,
   transformerVariantGroup,
+  presetTypography,
 } from "unocss";
+import type { Theme } from "unocss/preset-uno";
+import presetTheme from "unocss-preset-theme";
 
-export default defineConfig({
+function withOpacity(variableName: string) {
+  return ({ opacityValue }: any) => {
+    if (opacityValue) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
+export default defineConfig<Theme>({
   rules: [],
   shortcuts: [
     {
       logo: "i-logos-solidjs-icon w-6em h-6em transform transition-800 hover:rotate-360",
     },
     {
-      btn: "bg-rose",
+      btn: "bg-primary",
     },
   ],
   presets: [
+    presetTypography(),
     presetMini(),
     presetUno(),
     presetAttributify(),
@@ -28,17 +41,15 @@ export default defineConfig({
         "vertical-align": "middle",
       },
     }),
+    presetTheme<Theme>({
+      theme: {
+        // Configure dark themes
+        dark: {},
+        // Configure compact themes
+        compact: {},
+      },
+    }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  theme: {
-    colors: {
-      primary: "var(--primary-color)",
-    },
-    backgroundColors: {
-      primary: "var(--primary-bg)",
-    },
-    textColors: {
-      primary: "var(--primary-text)",
-    },
-  },
+  theme: {},
 });

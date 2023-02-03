@@ -3,15 +3,7 @@ import { ButtonProps } from "./type";
 
 const Template = (args: ButtonProps) => <Button {...args} />;
 
-export const Primary = () => (
-  <Template
-    classList={{
-      "p-10": true,
-    }}
-  >
-    Button
-  </Template>
-);
+export const Primary = () => <Template>Button</Template>;
 
 export const Disable = () => <Template disabled>Button</Template>;
 
