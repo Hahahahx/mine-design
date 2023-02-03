@@ -8,6 +8,7 @@ import {
   transformerVariantGroup,
   presetTypography,
 } from "unocss";
+import type { Preset } from "unocss";
 import type { Theme } from "unocss/preset-uno";
 import presetTheme from "unocss-preset-theme";
 
@@ -44,11 +45,13 @@ export default defineConfig<Theme>({
     presetTheme<Theme>({
       theme: {
         // Configure dark themes
-        dark: {},
+        dark: {
+          colors: {},
+        },
         // Configure compact themes
         compact: {},
       },
-    }),
+    }) as Preset<Theme>,
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {},
