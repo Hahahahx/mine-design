@@ -5,16 +5,9 @@ import { defineConfig } from "vite";
 import solidPlugin from "vite-plugin-solid";
 import dts from "vite-plugin-dts";
 import UnoCSS from "unocss/vite";
-import {
-  presetMini,
-  presetUno,
-  presetAttributify,
-  presetIcons,
-  transformerDirectives,
-  transformerVariantGroup,
-} from "unocss";
 import path from "path";
 import pkg from "./package.json";
+import unoConfig from "./uno.config";
 
 export default defineConfig({
   plugins: [
@@ -26,26 +19,7 @@ export default defineConfig({
       skipDiagnostics: false,
       logDiagnostics: true,
     }),
-    UnoCSS({
-      rules: [["btn", {}]],
-      shortcuts: [
-        {
-          logo: "i-logos-solidjs-icon w-6em h-6em transform transition-800 hover:rotate-360",
-        },
-      ],
-      presets: [
-        presetMini(),
-        presetUno(),
-        presetAttributify(),
-        presetIcons({
-          extraProperties: {
-            display: "inline-block",
-            "vertical-align": "middle",
-          },
-        }),
-      ],
-      transformers: [transformerDirectives(), transformerVariantGroup()],
-    }),
+    UnoCSS(unoConfig),
   ],
   build: {
     lib: {
