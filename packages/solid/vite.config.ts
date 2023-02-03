@@ -1,7 +1,7 @@
 /// <reference types="vitest" />
 /// <reference types="vite/client" />
 
-import { defineConfig } from "vite";
+import { defineConfig, PluginOption } from "vite";
 import solidPlugin from "vite-plugin-solid";
 import dts from "vite-plugin-dts";
 import UnoCSS from "unocss/vite";
@@ -19,7 +19,7 @@ export default defineConfig({
       skipDiagnostics: false,
       logDiagnostics: true,
     }),
-    UnoCSS(unoConfig),
+    UnoCSS(unoConfig) as PluginOption,
   ],
   build: {
     lib: {

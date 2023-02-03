@@ -1,5 +1,5 @@
+import { defineConfig } from "unocss/vite";
 import {
-  defineConfig,
   presetMini,
   presetUno,
   presetAttributify,
@@ -9,10 +9,13 @@ import {
 } from "unocss";
 
 export default defineConfig({
-  rules: [["btn", {}]],
+  rules: [],
   shortcuts: [
     {
       logo: "i-logos-solidjs-icon w-6em h-6em transform transition-800 hover:rotate-360",
+    },
+    {
+      btn: "bg-rose",
     },
   ],
   presets: [
@@ -27,4 +30,15 @@ export default defineConfig({
     }),
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
+  theme: {
+    colors: {
+      primary: "var(--primary-color)",
+    },
+    backgroundColors: {
+      primary: "var(--primary-bg)",
+    },
+    textColors: {
+      primary: "var(--primary-text)",
+    },
+  },
 });
