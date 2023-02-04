@@ -16,10 +16,10 @@ export default defineConfig({
       tsConfigFilePath: "tsconfig.build.json",
       insertTypesEntry: true,
       noEmitOnError: true,
-      skipDiagnostics: false,
-      logDiagnostics: true,
+      skipDiagnostics: true,
+      // logDiagnostics: true,
     }),
-    UnoCSS(unoConfig) as PluginOption,
+    UnoCSS() as PluginOption,
   ],
   build: {
     lib: {
@@ -29,8 +29,8 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        ...Object.keys(pkg.dependencies),
-        ...Object.keys(pkg.devDependencies),
+        // ...Object.keys(pkg.dependencies),
+        // ...Object.keys(pkg.devDependencies),
         "solid-js",
         "solid-js/web",
         "solid-js/store",

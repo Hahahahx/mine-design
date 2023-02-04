@@ -1,0 +1,1 @@
+"use strict";Object.defineProperty(exports,Symbol.toStringTag,{value:"Module"});const e=require("solid-js/web"),r=e.template('<button class="m-10 btn "></button>',2);function o(n){return(()=>{const t=r.cloneNode(!0);return e.spread(t,n,!1,!0),e.insert(t,()=>n.children),t})()}exports.Button=o;

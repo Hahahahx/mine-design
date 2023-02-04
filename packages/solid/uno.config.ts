@@ -7,18 +7,11 @@ import {
   transformerDirectives,
   transformerVariantGroup,
   presetTypography,
+  Preset,
 } from "unocss";
 import type { Theme } from "unocss/preset-uno";
 import presetTheme from "unocss-preset-theme";
-
-function withOpacity(variableName: string) {
-  return ({ opacityValue }: any) => {
-    if (opacityValue) {
-      return `rgba(var(${variableName}), ${opacityValue})`;
-    }
-    return `rgb(var(${variableName}))`;
-  };
-}
+import colors from "tailwindcss/colors";
 
 export default defineConfig<Theme>({
   rules: [],
@@ -27,29 +20,55 @@ export default defineConfig<Theme>({
       logo: "i-logos-solidjs-icon w-6em h-6em transform transition-800 hover:rotate-360",
     },
     {
-      btn: "bg-primary",
+      "btn-default":
+        "bg-primary text-white rounded-md text-base px-4 font-medium ring-2 ring-secondary",
     },
   ],
   presets: [
+    presetAttributify(),
+    presetUno(),
+    presetIcons(),
     presetTypography(),
     presetMini(),
-    presetUno(),
-    presetAttributify(),
-    presetIcons({
-      extraProperties: {
-        display: "inline-block",
-        "vertical-align": "middle",
-      },
-    }),
     presetTheme<Theme>({
       theme: {
         // Configure dark themes
-        dark: {},
+        dark: {
+          colors: {
+            primary: colors.blue[500],
+            secondary: colors.blue[300],
+            text: { main: colors.slate[100] },
+            // textPrimary: colors.slate[900],
+          },
+        },
         // Configure compact themes
         compact: {},
       },
-    }),
+    }) as Preset<Theme>,
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
-  theme: {},
+  preflights: [
+    {
+      getCSS: ({ theme }: any) => `
+        * { 
+          padding: 0;
+          margin: 0;
+          color:${theme.colors?.text.main};
+        }
+
+        ul,button,input{
+          outline:none;
+          border:none;
+        }
+      `,
+    },
+  ],
+  theme: {
+    colors: {
+      primary: colors.indigo[500],
+      secondary: colors.indigo[300],
+      text: { main: colors.slate[900] },
+      // textPrimary: colors.slate[900],
+    },
+  },
 });

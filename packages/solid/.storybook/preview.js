@@ -12,6 +12,7 @@ export const decorators = [
     }
     const root = document.getElementById("storybook-root");
     const solid = document.createElement("div");
+    solid.classList.add("dark");
 
     solid.setAttribute("id", "solid-root");
     root.appendChild(solid);
@@ -21,6 +22,7 @@ export const decorators = [
 ];
 
 export const parameters = {
+  // backgrounds: { disable: true },
   actions: { argTypesRegex: "^on[A-Z].*" },
   decorators,
   options: {
@@ -39,6 +41,7 @@ export const parameters = {
   darkMode: {
     dark: { ...themes.dark, appBg: "#1c1c1c", appContentBg: "#151718" },
     light: { ...themes.normal, appBg: "#f9fafb", appContentBg: "#ffffff" },
+    com: { ...themes.normal, appBg: "#f9fafb", appContentBg: "#ffffff" },
   },
   controls: {
     matchers: {
