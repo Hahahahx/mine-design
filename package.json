@@ -25,7 +25,8 @@
     "dev": "turbo run dev --parallel",
     "format": "prettier --write \"**/*.{js,ts,jsx,tsx,md,mdx}\"",
     "lint": "turbo run lint",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "sb:solid": "turbo run storybook"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,json,md,mdx}": [

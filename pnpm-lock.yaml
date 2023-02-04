@@ -123,6 +123,7 @@ importers:
       storybook-dark-mode: ^2.0.5
       typescript: ^4.9.4
       unocss: ^0.49.1
+      unocss-preset-theme: ^0.3.1
       vite: ^4.0.4
       vite-plugin-dts: ^1.7.2
       vite-plugin-solid: ^2.5.0
@@ -154,6 +155,7 @@ importers:
       storybook-dark-mode: registry.npmmirror.com/storybook-dark-mode/2.0.5_biqbaboplfbrettd7655fr4n2y
       typescript: registry.npmmirror.com/typescript/4.9.4
       unocss: registry.npmmirror.com/unocss/0.49.1_vite@4.0.4
+      unocss-preset-theme: registry.npmmirror.com/unocss-preset-theme/0.3.1
       vite: registry.npmmirror.com/vite/4.0.4_@types+node@18.11.18
       vite-plugin-dts: registry.npmmirror.com/vite-plugin-dts/1.7.2_dwc45emffwupjr7rjuagt6pgri
       vite-plugin-solid: registry.npmmirror.com/vite-plugin-solid/2.5.0_solid-js@1.6.9+vite@4.0.4
@@ -4644,6 +4646,12 @@ packages:
     dependencies:
       '@unocss/core': registry.npmmirror.com/@unocss/core/0.49.1
       unconfig: registry.npmmirror.com/unconfig/0.3.7
+    dev: true
+
+  registry.npmmirror.com/@unocss/core/0.48.5:
+    resolution: {integrity: sha512-goidlxqDEW14yYzLIqyUsoVPvrq3BuxvzY+87tulfHtiHWXd7fITSjHu80Bn0J6LZm1bVn2/D5nfE7ZLU/uW8g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@unocss/core/-/core-0.48.5.tgz}
+    name: '@unocss/core'
+    version: 0.48.5
     dev: true
 
   registry.npmmirror.com/@unocss/core/0.49.1:
@@ -14595,6 +14603,14 @@ packages:
     name: universalify
     version: 2.0.0
     engines: {node: '>= 10.0.0'}
+
+  registry.npmmirror.com/unocss-preset-theme/0.3.1:
+    resolution: {integrity: sha512-xzLqHzmx9jqKNGUCagM+dtK04FXHpvPMMBHu7wt6H1F0m5P00M5aQdXVHBqiCzYe5cWYEDCwrYinp5ZsJMUu1g==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unocss-preset-theme/-/unocss-preset-theme-0.3.1.tgz}
+    name: unocss-preset-theme
+    version: 0.3.1
+    dependencies:
+      '@unocss/core': registry.npmmirror.com/@unocss/core/0.48.5
+    dev: true
 
   registry.npmmirror.com/unocss/0.49.1_vite@4.0.4:
     resolution: {integrity: sha512-NtbJOA7aF3Qq5fGy94kMKU51XwyTWEzAAuhTx7zbrYOXlJ8QDw2jN3tQC2dMmGLFEspM16qIK0OD6jFuMj2ccQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/unocss/-/unocss-0.49.1.tgz}
