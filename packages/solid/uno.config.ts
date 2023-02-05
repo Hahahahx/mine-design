@@ -8,6 +8,7 @@ import {
   transformerVariantGroup,
   presetTypography,
   Preset,
+  presetTagify,
 } from "unocss";
 import type { Theme } from "unocss/preset-uno";
 import presetTheme from "unocss-preset-theme";
@@ -23,6 +24,9 @@ export default defineConfig<Theme>({
       "btn-default":
         "bg-primary text-white rounded-md text-base px-4 font-medium ring-2 ring-secondary",
     },
+    {
+      layout: "bg-default text-word",
+    },
   ],
   presets: [
     presetAttributify(),
@@ -30,6 +34,7 @@ export default defineConfig<Theme>({
     presetIcons(),
     presetTypography(),
     presetMini(),
+    presetTagify(),
     presetTheme<Theme>({
       theme: {
         // Configure dark themes
@@ -37,14 +42,21 @@ export default defineConfig<Theme>({
           colors: {
             primary: colors.blue[500],
             secondary: colors.blue[300],
-            text: { main: colors.slate[100] },
-            // textPrimary: colors.slate[900],
+            default: colors.black,
+            word: colors.slate[100],
           },
         },
         // Configure compact themes
         compact: {},
       },
     }) as Preset<Theme>,
+
+    // {
+    //   name: "theme",
+    //   extendTheme(ori) {
+    //     console.log(ori);
+    //   },
+    // },
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   preflights: [
@@ -53,12 +65,15 @@ export default defineConfig<Theme>({
         * { 
           padding: 0;
           margin: 0;
-          color:${theme.colors?.text.main};
         }
 
         ul,button,input{
           outline:none;
           border:none;
+        }
+
+        body{
+          @apply layout;
         }
       `,
     },
@@ -67,8 +82,8 @@ export default defineConfig<Theme>({
     colors: {
       primary: colors.indigo[500],
       secondary: colors.indigo[300],
-      text: { main: colors.slate[900] },
-      // textPrimary: colors.slate[900],
+      default: colors.white,
+      word: colors.slate[900],
     },
   },
 });
