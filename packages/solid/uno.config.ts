@@ -20,7 +20,7 @@ export default defineConfig<Theme>({
       logo: "i-logos-solidjs-icon w-6em h-6em transform transition-800 hover:rotate-360",
     },
     {
-      "btn-default":
+      btnDefault:
         "bg-primary text-white rounded-md text-base px-4 font-medium ring-2 ring-secondary",
     },
   ],
@@ -37,6 +37,7 @@ export default defineConfig<Theme>({
           colors: {
             primary: colors.blue[500],
             secondary: colors.blue[300],
+            // bgprimary: colors.slate[900],
             text: { main: colors.slate[100] },
             // textPrimary: colors.slate[900],
           },
@@ -53,7 +54,7 @@ export default defineConfig<Theme>({
         * { 
           padding: 0;
           margin: 0;
-          color:${theme.colors?.text.main};
+          color:${theme.colors.text.main};
         }
 
         ul,button,input{
@@ -67,6 +68,7 @@ export default defineConfig<Theme>({
     colors: {
       primary: colors.indigo[500],
       secondary: colors.indigo[300],
+      // bgprimary: colors.slate[50],
       text: { main: colors.slate[900] },
       // textPrimary: colors.slate[900],
     },

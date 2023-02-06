@@ -12,7 +12,7 @@ export const decorators = [
     }
     const root = document.getElementById("storybook-root");
     const solid = document.createElement("div");
-    solid.classList.add("dark");
+    // solid.classList.add("dark");
 
     solid.setAttribute("id", "solid-root");
     root.appendChild(solid);

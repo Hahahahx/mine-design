@@ -29,8 +29,8 @@ export default defineConfig({
     },
     rollupOptions: {
       external: [
-        // ...Object.keys(pkg.dependencies),
-        // ...Object.keys(pkg.devDependencies),
+        ...Object.keys(pkg.dependencies),
+        ...Object.keys(pkg.devDependencies),
         "solid-js",
         "solid-js/web",
         "solid-js/store",

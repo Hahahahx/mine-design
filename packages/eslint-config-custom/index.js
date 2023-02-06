@@ -27,6 +27,8 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "off",
     "@typescript-eslint/ban-types": "off",
     "@typescript-eslint/no-namespace": "off",
+    "solid/reactivity": "off",
+    "import/no-unresolved": "warn",
   },
   env: {
     es6: true,
