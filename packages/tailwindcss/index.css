@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+
+.btn-default {
+  @apply text-white bg-primary ring-2 ring-primary-500/20 io-size rounded hover:ring-primary-500/30 hover:bg-primary-light disabled:bg-slate-500 disabled:cursor-not-allowed;
+}
+
+@tailwind utilities;
