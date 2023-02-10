@@ -18,8 +18,8 @@ module.exports = {
         bkg: "white",
       },
       io: {
-        height: "24px",
-        padding: "0 10px 0 10px",
+        height: "26px",
+        padding: "0 16px 0 16px",
       },
       borderRadius: {
         DEFAULT: defaultTheme.borderRadius.md,
@@ -54,11 +54,20 @@ module.exports = {
       },
     },
     {
+      name: "io-smaller",
+      extend: {
+        io: {
+          height: "18px",
+          padding: "0 12px 0 12px",
+        },
+      },
+    },
+    {
       name: "io-small",
       extend: {
         io: {
-          height: "20px",
-          padding: "0 8px 0 8px",
+          height: "22px",
+          padding: "0 14px 0 14px",
         },
       },
     },
@@ -66,8 +75,8 @@ module.exports = {
       name: "io-normal",
       extend: {
         io: {
-          height: "24px",
-          padding: "0 10px 0 10px",
+          height: "26px",
+          padding: "0 16px 0 16px",
         },
       },
     },
@@ -75,8 +84,17 @@ module.exports = {
       name: "io-large",
       extend: {
         io: {
-          height: "32px",
-          padding: "0 12px 0 12px",
+          height: "30px",
+          padding: "0 18px 0 18px",
+        },
+      },
+    },
+    {
+      name: "io-larger",
+      extend: {
+        io: {
+          height: "34px",
+          padding: "0 20px 0 20px",
         },
       },
     },
