@@ -4,10 +4,22 @@ import type { ButtonProps } from "./type";
 export default function Button(props: ButtonProps) {
   const [local, others] = splitProps(props, ["variant", "class"]);
 
-  const variant = local.variant ?? "default";
+  let variant;
+
+  switch (local.variant) {
+    case "text":
+      variant = "btn-text";
+      break;
+    case "outline":
+      variant = "btn-outline";
+      break;
+    case "contained":
+    default:
+      variant = "btn-contained";
+  }
 
   return (
-    <button class={` btn-default leading-none`} {...others}>
+    <button class={`${local.class ?? ""} ${variant}`} {...others}>
       {props.children}
     </button>
   );

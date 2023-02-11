@@ -66,11 +66,11 @@ export const parameters = {
       ],
     },
   },
-  // darkMode: {
-  //   dark: { ...themes.dark, appBg: "#1c1c1c", appContentBg: "#151718" },
-  //   light: { ...themes.normal, appBg: "#f9fafb", appContentBg: "#ffffff" },
-  //   com: { ...themes.normal, appBg: "#f9fafb", appContentBg: "#ffffff" },
-  // },
+  darkMode: {
+    dark: { ...themes.dark, appBg: "#1c1c1c", appContentBg: "#151718" },
+    light: { ...themes.normal, appBg: "#f9fafb", appContentBg: "#ffffff" },
+    com: { ...themes.normal, appBg: "#f9fafb", appContentBg: "#ffffff" },
+  },
   controls: {
     matchers: {
       color: /(background|color)$/i,

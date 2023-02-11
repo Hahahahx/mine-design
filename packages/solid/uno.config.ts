@@ -14,6 +14,10 @@ import type { Theme } from "unocss/preset-uno";
 import presetTheme from "unocss-preset-theme";
 import colors from "tailwindcss/colors";
 
+const preset: Preset<{} | any> = {
+  name: "unocss-preset-chinese",
+};
+
 export default defineConfig<Theme>({
   rules: [
     // [
@@ -31,8 +35,8 @@ export default defineConfig<Theme>({
       logo: "i-logos-solidjs-icon w-6em h-6em transform transition-800 hover:rotate-360",
     },
     {
-      btnDefault:
-        "bg-primary-100 text-white rounded-md text-base px-4 font-medium ring-2 ring-secondary-100",
+      btnContained:
+        "bg-primary text-white rounded-md text-base px-4 font-medium ring-2 ring-primary/20",
     },
     // {
     //   layout: "bg-default text-word",
@@ -110,8 +114,7 @@ export default defineConfig<Theme>({
   ],
   theme: {
     colors: {
-      primary: "rgb(var(--color-primary) / <alpha-value>)",
-      secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+      primary: "rgb(var(--color-primary))",
       // primary: colors.indigo[500],
       // secondary: colors.indigo[300],
       // default: colors.white,
