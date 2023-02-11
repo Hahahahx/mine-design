@@ -1,8 +1,28 @@
 @tailwind base;
 @tailwind components;
 
-.btn-default {
-  @apply text-white bg-primary ring-2 ring-primary-500/20 io-size rounded hover:ring-primary-500/30 hover:bg-primary-light disabled:bg-slate-500 disabled:cursor-not-allowed;
+.btn-contained {
+  @apply text-white bg-primary border-[1px] border-primary-light io-size rounded hover:border-primary-lighter hover:bg-primary-light disabled:bg-slate-500 disabled:text-slate-200 disabled:border-slate-300 disabled:cursor-not-allowed leading-none group-[.io-group]:rounded-none group-[.io-group]:first:rounded-l group-[.io-group]:last:rounded-r group-[.io-group]:border-r-0 group-[.io-group]:last:border-r-[1px];
+}
+
+.io-group {
+  @apply inline;
+}
+
+.btn-text {
+  @apply font-medium text-primary-light io-size rounded hover:bg-primary-500/10 disabled:text-slate-300 disabled:cursor-not-allowed leading-none group-[.io-group]:rounded-none group-[.io-group]:first:rounded-l group-[.io-group]:last:rounded-r group-[.io-group]:border-r-0 group-[.io-group]:last:border-r-[1px];
+}
+
+.btn-outline {
+  @apply font-medium text-primary-light border-[1px] border-primary-light io-size rounded hover:border-primary-lighter hover:bg-primary-500/10 disabled:bg-slate-500 disabled:text-slate-200 disabled:border-slate-300 disabled:cursor-not-allowed leading-none group-[.io-group]:rounded-none group-[.io-group]:first:rounded-l group-[.io-group]:last:rounded-r group-[.io-group]:border-r-0 group-[.io-group]:last:border-r-[1px];
+}
+
+.io-group {
+  @apply inline;
+}
+
+.paper {
+  @apply paper-blur rounded shadow-md bg-slate-100;
 }
 
 @tailwind utilities;

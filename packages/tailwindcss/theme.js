@@ -15,7 +15,10 @@ module.exports = {
           ...indigo,
         },
         text: slate[900],
-        bkg: "white",
+        bkg: {
+          primary: "white",
+          secondary: slate[100],
+        },
       },
       io: {
         height: "26px",
@@ -23,6 +26,11 @@ module.exports = {
       },
       borderRadius: {
         DEFAULT: defaultTheme.borderRadius.md,
+      },
+      paper: {
+        padding: "12px",
+        blur: defaultTheme.blur[0],
+        opacity: 1,
       },
     },
   },
@@ -32,7 +40,10 @@ module.exports = {
       extend: {
         colors: {
           text: slate[900],
-          bkg: "white",
+          bkg: {
+            primary: "white",
+            secondary: slate[100],
+          },
         },
       },
     },
@@ -41,7 +52,10 @@ module.exports = {
       extend: {
         colors: {
           text: slate[50],
-          bkg: "black",
+          bkg: {
+            primary: "black",
+            secondary: slate[900],
+          },
         },
       },
     },
@@ -95,6 +109,15 @@ module.exports = {
         io: {
           height: "34px",
           padding: "0 20px 0 20px",
+        },
+      },
+    },
+    {
+      name: "component-blur",
+      extend: {
+        paper: {
+          blur: defaultTheme.blur.md,
+          opacity: 0.5,
         },
       },
     },

@@ -8,7 +8,7 @@ module.exports = {
     plugin(({ addUtilities, addBase, theme }) => {
       addBase({
         body: {
-          backgroundColor: theme("colors.bkg"),
+          backgroundColor: theme("colors.bkg.primary"),
           color: theme("colors.text"),
         },
       });
@@ -17,6 +17,11 @@ module.exports = {
         ".io-size": {
           height: theme("io.height"),
           padding: theme("io.padding"),
+        },
+        ".paper-blur": {
+          "--tw-bg-opacity": theme("paper.opacity"),
+          backdropFilter: theme("paper.blur"),
+          padding: theme("paper.padding"),
         },
       });
     }),
